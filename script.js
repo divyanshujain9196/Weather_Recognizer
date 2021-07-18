@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@divyanshujain9196 
+atishayj281
+/
+divyanshujain9196.github.io
+forked from divyanshujain9196/divyanshujain9196.github.io
+0
+01
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+divyanshujain9196.github.io/script.js /
+@atishayj281
+atishayj281 Error message resolved
+Latest commit b4f2196 4 minutes ago
+ History
+ 2 contributors
+69 lines (54 sloc)  2.23 KB
+  
 const api = {
     key: "28fd15358cdecbc1a1dfef367e71acef",
     base: "https://api.openweathermap.org/data/2.5/"
@@ -25,11 +55,13 @@ function getData () {
 
 function displayData (response) {
     // console.log(response);
+    const error = document.querySelector(".error");
     if (response.cod === "404") {
-        const error = document.querySelector(".error");
+        
         error.textContent = "Please enter a valid city";
         search.value = "";
     } else {
+        error.textContent = "";
         const city = document.querySelector(".city");
         city.innerText = `${response.name}, ${response.sys.country}`;
 
@@ -65,3 +97,16 @@ function dateFunction (d) {
 
     return `${day}, ${date} ${month} ${year}`;
 }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
